@@ -1,54 +1,61 @@
-
 //creare array 
 const membri = [
-    membro1 = membroSingolo
+    membroSingolo
     (
         "Wayne Barnett",
         "Founder & CEO", 
         "wayne-barnett-founder-ceo.jpg"
     ), 
-    membro2 = membroSingolo
+    membroSingolo
     (
-        "Wayne Barnett",
-        "Founder & CEO", 
-        "wayne-barnett-founder-ceo.jpg"
+        "Angela Caroll",
+        "Chief Editor", 
+        "angela-caroll-chief-editor.jpg"
     ), 
-    membro3 = membroSingolo
+    membroSingolo
     (
-        "Wayne Barnett",
-        "Founder & CEO", 
-        "wayne-barnett-founder-ceo.jpg"
+        "Walter Gordon",
+        "Office Manager	", 
+        "walter-gordon-office-manager.jpg"
     ), 
-    membro4 = membroSingolo
+    membroSingolo
     (
-        "prova Barnett",
-        "Founder & CEO", 
-        "wayne-barnett-founder-ceo.jpg"
+        "Angela Lopez",
+        "Social Media Manager", 
+        "angela-lopez-social-media-manager.jpg"
     ), 
-    membro5 = membroSingolo
+    membroSingolo
     (
-        "Wayne Barnett",
-        "Founder & CEO", 
-        "wayne-barnett-founder-ceo.jpg"
+        "Scott Estrada",
+        "Developer", 
+        "scott-estrada-developer.jpg"
     ), 
-    membro6 = membroSingolo
+    membroSingolo
     (
-        "Wayne Barnett",
-        "Founder & CEO", 
-        "wayne-barnett-founder-ceo.jpg"
+        "Barbara Ramos",
+        "Graphic Designer", 
+        "barbara-ramos-graphic-designer.jpg"
     ), 
 ]
 
 
 //stampare sul dom come stringhe
-const bodyEl = document.querySelector("body")
+const bodyEl = document.querySelector(".card-members")
 
-for(let i = 0; i < 6; i++) {
+for(let i = 0; i < membri.length; i++) {
 
-    const membroCorrente = membri[i]
-
-    bodyEl.innerHTML = membroCorrente.membroSingolo
+    const membroCorrente = membri[i];
+    bodyEl.innerHTML += `
+    <div class="col-4">
+        <div class="card-member">
+            <img src="./img/${membroCorrente.foto}" alt="">
+            <div class="intest">
+                ${membroCorrente.nome} - ${membroCorrente.ruolo}
+            </div>
+        </div>
+    </div>`
 }
+
 
 
 //creare oggetti membri team
@@ -60,10 +67,7 @@ function membroSingolo(newname, newrole, newfoto) {
 
     //stampare console ogni informazione
     console.log(membro.nome, membro.ruolo, membro.foto)
-
-
     
     return membro
 }
 
-//devono avere nome ruolo e foto
